@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: database
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "exchange"
+      POSTGRES_USER: "plata-admin"
+      POSTGRES_PASSWORD: "Adm1nPlata2024!"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "3443:5432"
+    networks:
+      - network
+networks:
+  network:
+    driver: bridge
+    name: internal_network
+
